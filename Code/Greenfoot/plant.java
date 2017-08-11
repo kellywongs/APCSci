@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class plant extends Actor
+public class Plant extends Actor
 {
     /**
      * Act - do whatever the plant wants to do. This method is called whenever
@@ -17,8 +17,12 @@ public class plant extends Actor
         this.move(-5);
         if(this.isAtEdge() == true) 
         {
-            this.turn(170);
-        }
+            this.turn(40);
+        };
+        // if(this.isTouching(java.lang.Class<null> cls))
+        // {
+            // this.turn(180);
+        // }
     }
 }
 

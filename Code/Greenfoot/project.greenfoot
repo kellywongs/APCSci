@@ -1,18 +1,19 @@
 #Greenfoot properties
-#Fri Aug 11 09:04:23 PDT 2017
+#Fri Aug 11 09:16:24 PDT 2017
 readme.name=@README
 class.plant.superclass=greenfoot.Actor
 target2.name=plant
 target2.naviview.expanded=true
-simulation.speed=55
+simulation.speed=70
 dependency1.from=MyHeckingWorld
 target2.showInterface=false
 target1.type=ClassTarget
 class.MyHeckingWorld.superclass=greenfoot.World
 target2.y=0
-target2.x=0
 package.numTargets=2
+target2.x=0
 target1.height=50
+class.bread.superclass=greenfoot.Actor
 target1.y=0
 target2.height=50
 target1.x=0
@@ -22,6 +23,7 @@ editor.fx.0.height=739
 target1.showInterface=false
 target1.name=MyHeckingWorld
 editor.fx.0.width=816
+class.bread.image=bread.png
 target2.typeParameters=
 readme.y=10
 readme.x=10
