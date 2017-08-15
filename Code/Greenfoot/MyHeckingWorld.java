@@ -18,11 +18,11 @@ public class MyHeckingWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(400, 400, 1); 
         
-        Plant c0 = new Plant(); //makes a new cactus
-        this.addObject(c0, 10, 10);
-        Plant c = new Plant(); //makes a new cactus
-        this.addObject(c, 110, 110);
-        Plant c1 = new Plant(); //makes a new cactus
-        this.addObject(c1, 210, 210);
+        // Plant c0 = new Plant(); //makes a new cactus
+        // this.addObject(c0, 10, 10);
+        // Plant c = new Plant(); //makes a new cactus
+        // this.addObject(c, 110, 110);
+        // Plant c1 = new Plant(); //makes a new cactus
+        // this.addObject(c1, 210, 210);
     }
 }

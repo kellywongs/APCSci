@@ -9,11 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class SqBread extends Actor
 {
     private int stepCounter;
+    private int sidesLength;
     
     public SqBread() // constructor - make a new object
     {
-        stepCounter = 0;
-        
+        this.stepCounter = 0; // this. is just convention lmao
+        this.sidesLength = 10;
     }
     
     /**
@@ -24,5 +25,20 @@ public class SqBread extends Actor
     {
         stepCounter += 1;
         System.out.println(stepCounter);
+        
+        this.move(2);
+        if(this.stepCounter == this.sidesLength) 
+        {
+            this.turn(10);
+            this.stepCounter = 0;
+        }
+        if(this.isTouching(SqBread.class))
+        {
+            this.turn(180);
+            while(this.isTouching(SqBread.class))
+            {
+                this.move(4);
+            } 
+        }
     }    
 }
