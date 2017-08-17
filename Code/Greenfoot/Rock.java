@@ -14,15 +14,18 @@ public class Rock extends Actor
      */
     public void act() 
     {
-        this.move(10);
-        this.turn(4);
-        if(this.isTouching(SqBread.class))
+        if (Greenfoot.isKeyDown("left"))
         {
-            this.turn(180);
-            while(this.isTouching(SqBread.class))
-            {
-                this.move(4);
-            } 
+            turn(-3);
         }
+        if (Greenfoot.isKeyDown("right"))
+        {
+            turn(3);
+        }
+        if (this.isAtEdge())
+        {
+            turn(180);
+        }
+        move(1);
     }    
 }
