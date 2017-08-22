@@ -1,0 +1,13 @@
+#Greenfoot properties
+#Tue Aug 22 09:22:31 PDT 2017
+class.Flower.superclass=greenfoot.Actor
+class.MyWorld.image=bricks2.jpg
+mainWindow.width=850
+class.MyWorld.superclass=greenfoot.World
+project.charset=UTF-8
+version=3.0.0
+world.lastInstantiated=MyWorld
+mainWindow.y=40
+mainWindow.x=40
+class.Flower.image=cactus.png
+mainWindow.height=600
