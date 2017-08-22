@@ -17,6 +17,8 @@ public class Flower extends Actor
     
     public void act() 
     {
-       
+        this.move(1);
+        this.stepCounter ++;
+        System.out.println(this.stepCounter);
     }    
 }
