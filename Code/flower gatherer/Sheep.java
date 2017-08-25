@@ -17,11 +17,15 @@ public class Sheep extends Actor
     public int score;
     public int moveFor;
     
-    public void Sheep()
+    public Sheep()
     {
         stepCounter = 0;
         score = 0;
         moveFor = Greenfoot.getRandomNumber(100);
+        
+        GreenfootImage image = getImage();
+        image.scale(moveFor+20, moveFor+1);
+        setImage(image);
     }
     
     public void act() 
@@ -45,11 +49,13 @@ public class Sheep extends Actor
         if (this.isTouching(Flower.class))
         {
             removeTouching(Flower.class);
-            System.out.println(score ++);
-        }
+            System.out.println("You have killed"+score++ +"cacti."); // (dfada)
+            
+            
+        // }
         
-        if (this.isTouching(Sheep.class))
-        {
+        // if (this.isTouching(Sheep.class))
+        // {
             World w = getWorld();
             w.addObject(new Sheep(), Greenfoot.getRandomNumber(w.getWidth()), Greenfoot.getRandomNumber(w.getHeight()));;
         }

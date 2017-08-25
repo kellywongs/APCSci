@@ -19,7 +19,7 @@ public class Flower extends Actor
     
     public Flower() { // initialized outside and set to its first value in the constructor
         this.stepCounter = 0;
-        this.lifeLength = 600;
+        this.lifeLength = 300;
     }
     
     public void act() 

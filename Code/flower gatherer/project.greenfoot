@@ -1,16 +1,13 @@
 #Greenfoot properties
-#Thu Aug 24 09:25:57 PDT 2017
+#Fri Aug 25 09:24:44 PDT 2017
+class.Critter.superclass=greenfoot.Actor
 class.Flower.superclass=greenfoot.Actor
 class.Sheep.image=sheep.png
-mainWindow.width=850
 class.MyWorld.image=bricks2.jpg
+class.Critter.image=bread.png
 class.MyWorld.superclass=greenfoot.World
-project.charset=UTF-8
 version=3.0.0
-class.Controller.superclass=greenfoot.Actor
 world.lastInstantiated=MyWorld
-mainWindow.y=40
-mainWindow.x=40
-class.Sheep.superclass=greenfoot.Actor
-mainWindow.height=600
+class.Controller.superclass=greenfoot.Actor
 class.Flower.image=cactus.png
+class.Sheep.superclass=greenfoot.Actor
