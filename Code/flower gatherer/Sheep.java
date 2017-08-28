@@ -16,16 +16,25 @@ public class Sheep extends Actor
     public int stepCounter;
     public int score;
     public int moveFor;
+    public int size;
+    public int touchedBread;
     
     public Sheep()
     {
         stepCounter = 0;
         score = 0;
+        touchedBread = 0;
         moveFor = Greenfoot.getRandomNumber(100);
         
         GreenfootImage image = getImage();
-        image.scale(moveFor+20, moveFor+1);
+        size = moveFor;
+        image.scale(size+10, size);
         setImage(image);
+    }
+    
+    public void critMove() 
+    {
+        
     }
     
     public void act() 
@@ -49,15 +58,37 @@ public class Sheep extends Actor
         if (this.isTouching(Flower.class))
         {
             removeTouching(Flower.class);
-            System.out.println("You have killed"+score++ +"cacti."); // (dfada)
+            System.out.println("You have killed "+score++ +" cacti."); 
             
+            GreenfootImage image = getImage();
             
+            if (size >= 300)
+            {
+                image.scale(10, 15); 
+                setImage(image);
+                size = 1;
+            } else {
+                // size += Greenfoot.getRandomNumber(moveFor);
+                image.scale(size++, size++); 
+                setImage(image);
+            }
+           
         // }
         
         // if (this.isTouching(Sheep.class))
         // {
-            World w = getWorld();
-            w.addObject(new Sheep(), Greenfoot.getRandomNumber(w.getWidth()), Greenfoot.getRandomNumber(w.getHeight()));;
+            // World w = getWorld();
+            // w.addObject(new Sheep(), Greenfoot.getRandomNumber(w.getWidth()), Greenfoot.getRandomNumber(w.getHeight()));;
+        }
+        
+        if (this.isTouching(Bread.class))
+        {
+            removeTouching(Bread.class);
+            System.out.println("(DOOT DOOT DOOT DOOT DOOT) x" + touchedBread++); 
+            
+            GreenfootImage image = getImage();
+            image.scale(size*=2, size*=2); 
+            setImage(image);
         }
     }    
 }

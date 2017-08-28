@@ -14,17 +14,22 @@ public class Controller extends Actor
      */
     
     private int stepCounter;
+    private int breadCounter;
     private int number;
+    private int evenRarerNumber;
     
     public Controller()
     {
         this.stepCounter = 0;
+        this.breadCounter = 0;
         this.number = 15;
+        this.evenRarerNumber = 100;
     }
     
     public void act() 
     {
         this.stepCounter ++;
+        this.breadCounter ++;
         
         if (stepCounter == Greenfoot.getRandomNumber(number))
         {
@@ -34,6 +39,16 @@ public class Controller extends Actor
         } else if (stepCounter > number)
         {
             this.stepCounter = 0;
+        }
+
+        if (breadCounter == Greenfoot.getRandomNumber(evenRarerNumber))
+        {
+            World w = getWorld();
+            w.addObject(new Bread(), Greenfoot.getRandomNumber(w.getWidth()), Greenfoot.getRandomNumber(w.getHeight()));;
+            this.stepCounter = 0;
+        } else if (breadCounter > evenRarerNumber)
+        {
+            this.breadCounter = 0;
         }
        
     }    

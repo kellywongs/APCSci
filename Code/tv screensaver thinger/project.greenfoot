@@ -1,0 +1,12 @@
+#Greenfoot properties
+#Mon Aug 28 09:07:57 PDT 2017
+class.Logo.image=dvd logo.png
+mainWindow.width=850
+class.MyWorld.superclass=greenfoot.World
+class.Logo.superclass=greenfoot.Actor
+project.charset=UTF-8
+version=3.0.0
+world.lastInstantiated=MyWorld
+mainWindow.y=40
+mainWindow.x=40
+mainWindow.height=600
