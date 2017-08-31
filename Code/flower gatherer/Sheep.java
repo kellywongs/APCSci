@@ -24,7 +24,7 @@ public class Sheep extends Actor
         stepCounter = 0;
         score = 0;
         touchedBread = 0;
-        moveFor = Greenfoot.getRandomNumber(100);
+        moveFor = Greenfoot.getRandomNumber(100)+1;
         
         GreenfootImage image = getImage();
         size = moveFor;

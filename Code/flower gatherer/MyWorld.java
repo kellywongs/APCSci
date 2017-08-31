@@ -27,5 +27,6 @@ public class MyWorld extends World
         
         addObject(new Controller(), 0, 0);
         addObject(new Sheep(), getWidth()/2-100, getHeight()/2);
+        addObject(new Stats(), getWidth()-30, getHeight()-30);
     }
 }
