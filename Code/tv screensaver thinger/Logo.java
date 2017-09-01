@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Logo extends Actor
 {
+    private int direction;
+    
     /**
      * Act - do whatever the Logo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,12 +17,25 @@ public class Logo extends Actor
     
     public Logo()
     {
-        Greenfoot image = getImage();
-        
+        GreenfootImage image = getImage();
+        image.scale(150, 100);
     }
     
     public void act() 
     {
-        // Add your action code here.
+        this.setRotation(direction);
+        this.move(4);
+        this.setRotation(0);
+        if (this.isAtEdge()) 
+        {
+            this.direction = direction + Greenfoot.getRandomNumber(45);
+            System.out.println(direction);
+        }
+        
+        if (this.isTouching(Corners.class))
+        {
+            System.out.println("CORNER TOUCH");
+            
+        }
     }    
 }

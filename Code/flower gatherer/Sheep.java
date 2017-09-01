@@ -19,6 +19,7 @@ public class Sheep extends Actor
     public int moveFor;
     public int size;
     public int touchedBread;
+    private int homeX, homeY;
     
     public Sheep()
     {
