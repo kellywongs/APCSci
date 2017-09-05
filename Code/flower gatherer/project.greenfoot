@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Sep 01 08:22:41 PDT 2017
+#Tue Sep 05 08:52:04 PDT 2017
 class.Flower.superclass=greenfoot.Actor
 class.Sheep.image=sheep.png
 simulation.speed=50

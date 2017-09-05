@@ -24,6 +24,8 @@ public class Controller extends Actor
         this.breadCounter = 0;
         this.number = 15;
         this.evenRarerNumber = 100;
+        GreenfootImage gfi = new GreenfootImage(2,2);
+        setImage(gfi);
     }
     
     public void act() 

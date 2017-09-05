@@ -1,9 +1,11 @@
 #Greenfoot properties
-#Fri Sep 01 08:48:09 PDT 2017
+#Tue Sep 05 09:00:36 PDT 2017
 class.Corners.superclass=greenfoot.Actor
 class.Logo.image=dvd logo.png
+class.Cactus.superclass=greenfoot.Actor
 mainWindow.width=850
 class.MyWorld.superclass=greenfoot.World
+class.Cactus.image=cactus.png
 class.Logo.superclass=greenfoot.Actor
 project.charset=UTF-8
 version=3.0.0

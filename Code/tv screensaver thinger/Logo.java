@@ -24,11 +24,11 @@ public class Logo extends Actor
     public void act() 
     {
         this.setRotation(direction);
-        this.move(4);
+        this.move(3);
         this.setRotation(0);
         if (this.isAtEdge()) 
         {
-            this.direction = direction + Greenfoot.getRandomNumber(45);
+            this.direction = (direction + Greenfoot.getRandomNumber(95)) % 360;
             System.out.println(direction);
         }
         
