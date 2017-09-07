@@ -29,7 +29,12 @@ public class Flower extends Actor
            
            // w.addObject(new this, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400));
         // }
+        flowerSpawner();
         
+    }    
+    
+    public void flowerSpawner()
+    {
         if (stepCounter != lifeLength)
         {
             this.stepCounter ++;
@@ -37,5 +42,5 @@ public class Flower extends Actor
             World w = this.getWorld();
             w.removeObject(this);
         }
-    }    
+    }
 }

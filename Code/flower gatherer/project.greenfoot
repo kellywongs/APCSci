@@ -1,16 +1,20 @@
 #Greenfoot properties
-#Thu Sep 07 08:38:56 PDT 2017
-class.Flower.superclass=greenfoot.Actor
+#Thu Sep 07 09:36:51 PDT 2017
+class.EvilFlower.superclass=greenfoot.Actor
+version=3.0.0
+class.Bread.image=bread.png
+class.Stats.image=yellow-draught.png
+class.EvilFlower.image=rock.png
+class.Flower.image=cactus.png
+class.MyWorld.image=bricks2.jpg
 class.Sheep.image=sheep.png
 simulation.speed=50
-class.MyWorld.image=bricks2.jpg
-class.Stats.image=yellow-draught.png
-class.MyWorld.superclass=greenfoot.World
-version=3.0.0
-class.Stats.superclass=greenfoot.Actor
-class.Controller.superclass=greenfoot.Actor
 world.lastInstantiated=MyWorld
-class.Bread.image=bread.png
+class.MyWorld.superclass=greenfoot.World
+class.Flower.superclass=greenfoot.Actor
+class.Stats.superclass=greenfoot.Actor
+class.TurnySheep.superclass=greenfoot.Actor
+class.TurnySheep.image=sheep.png
+class.Controller.superclass=greenfoot.Actor
 class.Sheep.superclass=greenfoot.Actor
-class.Flower.image=cactus.png
 class.Bread.superclass=greenfoot.Actor

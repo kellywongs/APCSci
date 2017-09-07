@@ -1,0 +1,17 @@
+#Greenfoot properties
+#Thu Sep 07 09:22:00 PDT 2017
+class.Rock.image=rock.png
+mainWindow.width=850
+class.Rock.superclass=greenfoot.Actor
+class.MyWorld.superclass=greenfoot.World
+project.charset=UTF-8
+version=3.0.0
+class.Lawnmower.image=sheep.png
+class.Grass.superclass=greenfoot.Actor
+class.Controller.superclass=greenfoot.Actor
+class.Grass.image=alligator.png
+world.lastInstantiated=MyWorld
+mainWindow.y=40
+class.Lawnmower.superclass=greenfoot.Actor
+mainWindow.x=40
+mainWindow.height=600

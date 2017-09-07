@@ -17,6 +17,7 @@ public class Controller extends Actor
     private int breadCounter;
     private int number;
     private int evenRarerNumber;
+    private int evilFlowerer;
     
     public Controller()
     {
@@ -32,12 +33,18 @@ public class Controller extends Actor
     {
         this.stepCounter ++;
         this.breadCounter ++;
+        this.evilFlowerer ++;
+         World w = getWorld();
+         if (evilFlowerer == 500)
+            {
+                w.addObject(new EvilFlower(), Greenfoot.getRandomNumber(w.getWidth()), Greenfoot.getRandomNumber(w.getHeight()));;
+            }
         
         if (stepCounter == Greenfoot.getRandomNumber(number))
         {
-            World w = getWorld();
             w.addObject(new Flower(), Greenfoot.getRandomNumber(w.getWidth()), Greenfoot.getRandomNumber(w.getHeight()));;
             this.stepCounter = 0;
+            
         } else if (stepCounter > number)
         {
             this.stepCounter = 0;
@@ -45,7 +52,6 @@ public class Controller extends Actor
 
         if (breadCounter == Greenfoot.getRandomNumber(evenRarerNumber))
         {
-            World w = getWorld();
             w.addObject(new Bread(), Greenfoot.getRandomNumber(w.getWidth()), Greenfoot.getRandomNumber(w.getHeight()));;
             this.stepCounter = 0;
         } else if (breadCounter > evenRarerNumber)

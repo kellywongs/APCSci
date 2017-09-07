@@ -13,20 +13,14 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    public void randomFlower()
-    {
-        addObject(new Flower(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
-    }
-    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        this.randomFlower();
-        
-        addObject(new Controller(), 0, 0);
-        addObject(new TurnySheep(), getWidth()/2-100, getHeight()/2);
-        addObject(new Stats(), getWidth()-30, getHeight()-30);
+       
+            addObject(new Grass(), Greenfoot.getRandomNumber(getWidth()), getHeight());
+        addObject(new Controller(), Greenfoot.getRandomNumber(getWidth()), getHeight());
+        addObject(new Lawnmower(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(50));
     }
 }
