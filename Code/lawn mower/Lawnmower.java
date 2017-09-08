@@ -44,6 +44,11 @@ public class Lawnmower extends Actor
             speed-=1;
             System.out.println(speed/5);
         }
+        if (Greenfoot.isKeyDown("space"))
+        {
+            World w = this.getWorld();
+            w.addObject(new SheepStamp(), getX(), getY());
+        }
         
         if (this.isTouching(Grass.class))
         {

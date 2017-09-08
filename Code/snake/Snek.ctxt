@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Snek
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Snek\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Snek()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ snekGame()
+numComments=4

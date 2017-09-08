@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Logo extends Actor
 {
     private int direction;
+    private int stamp;
     
     /**
      * Act - do whatever the Logo wants to do. This method is called whenever
@@ -26,6 +27,7 @@ public class Logo extends Actor
         this.setRotation(direction);
         this.move(3);
         this.setRotation(0);
+        stamp ++;
         if (this.isAtEdge()) 
         {
             this.direction = (direction + Greenfoot.getRandomNumber(95)) % 360;
@@ -36,6 +38,13 @@ public class Logo extends Actor
         {
             System.out.println("CORNER TOUCH");
             
+        }
+        
+        if (stamp == 5) 
+        {
+            World w = this.getWorld();
+            w.addObject(new DoesntMove(), getX(), getY());
+            stamp = 0;
         }
     }    
 }
