@@ -28,7 +28,7 @@ public class SnekTrail extends Snek
         World w = this.getWorld();
         lengthCounter ++;
         
-        if (lengthCounter == 50)
+        if (lengthCounter >= length*20)
         {
             w.removeObject(this);
         }
