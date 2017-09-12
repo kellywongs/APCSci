@@ -36,11 +36,6 @@ public class Sheep extends Actor
     
     public void critMove() 
     {
-        
-    }
-    
-    public void act() 
-    {
         // if (stepCounter == 0)
         // {
             // homeX = getX();
@@ -104,5 +99,10 @@ public class Sheep extends Actor
         // {
             // this.setLocation(homeX, homeY);
         // }
+    }
+    
+    public void act() 
+    {
+        critMove();
     }    
 }

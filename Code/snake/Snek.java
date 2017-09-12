@@ -22,7 +22,7 @@ public class Snek extends Actor
         GreenfootImage image = getImage();
         image.scale(25, 25);
         
-        difficulty = 1;
+        difficulty = 9;
         moveSpeed = 1;
         length = 5;
     }
@@ -51,10 +51,12 @@ public class Snek extends Actor
             breadCount = 0;
             difficulty ++;
             length ++;
+            System.out.println(length);
             
             if ((difficulty%10) == 0)
             {
                 moveSpeed ++;
+                lengthCounter=0;
             }
         }
     }
@@ -66,7 +68,7 @@ public class Snek extends Actor
         
         move(moveSpeed);
         
-        if (this.isTouching(SnekTrail.class) == false)
+        if (lengthCounter == 18/moveSpeed)
         {
             w.addObject(new SnekTrail(), getX(), getY());
             lengthCounter = 0;
