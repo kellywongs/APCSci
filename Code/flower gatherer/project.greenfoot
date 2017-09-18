@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri Sep 15 09:10:15 PDT 2017
+#Mon Sep 18 09:03:46 PDT 2017
 target4.type=ClassTarget
 target8.showInterface=false
 target3.height=50
@@ -34,14 +34,14 @@ target2.typeParameters=
 target8.height=50
 target3.showInterface=false
 target6.name=MyWorld
-target7.showInterface=false
 class.Bread.image=bread.png
-target8.typeParameters=
+target7.showInterface=false
 target1.showInterface=false
+target8.typeParameters=
 class.Stats.image=yellow-draught.png
 target5.showInterface=false
-target7.type=ClassTarget
 target6.width=80
+target7.type=ClassTarget
 target6.height=50
 package.numTargets=8
 target8.y=0
@@ -56,8 +56,8 @@ target6.y=0
 target1.typeParameters=
 target6.x=0
 target2.height=50
-target5.y=0
 target4.height=50
+target5.y=0
 target5.x=0
 target1.name=Flower
 target8.type=ClassTarget
