@@ -19,6 +19,7 @@ public class Rocket extends Actor
     public void act() 
     {
         this.navigation();
+        this.shoot();
     }    
     
     public void navigation()
@@ -39,5 +40,14 @@ public class Rocket extends Actor
             this.setRotation(270);
         }
         
+    }
+    
+    public void shoot()
+    {
+        if (Greenfoot.isKeyDown("space"))
+        {
+            World w = getWorld();
+            w.addObject(new Bullet(), getX(), getY());
+        }
     }
 }
