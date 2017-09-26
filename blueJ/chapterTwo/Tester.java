@@ -52,21 +52,21 @@ public class Tester
                 }
             }
         
-            userPass.encryption();
+            // userPass.encryption();
         } else {
             System.out.println("T-t-t-t-t-try again");
             comparePass = scan.nextLine();
         }
     }
     
-    public static String encryption(userPass)
-    {
-        int passCounter = 0;
+    // public static String encryption(userPass)
+    // {
+        // int passCounter = 0;
         
-        while (passCounter != userPass.length())
-        {
-            System.out.println("passCounter");
-            passCounter = userPass.charAt(passCounter+=1);
-        }
-    }
+        // while (passCounter != userPass.length())
+        // {
+            // System.out.println("passCounter");
+            // passCounter = userPass.charAt(passCounter+=1);
+        // }
+    // }
 }
