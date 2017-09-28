@@ -19,12 +19,14 @@ public class Tester
         
         Boolean strongPass = false;
         
-        System.out.println("Enter school password: ");
+        System.out.print("Enter school password: ");
         String comparePass = scan2.nextLine();
+        
+        System.out.println(comparePass);
         
         if (comparePass.equals(password)) 
         {
-            System.out.println("Good for u. Enter your own password: ");
+            System.out.print("Good for u. Enter your own password: ");
             userPass = scan.nextLine();
             
         

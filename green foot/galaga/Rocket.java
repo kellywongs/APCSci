@@ -9,11 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Rocket extends Actor
 {
     int direction;
+    int shootSpeed;
+    int shootCounter;
     
     public Rocket()
     {
         this.setRotation(270);
         direction = 180;
+        
+        shootSpeed = 5;
+        shootCounter = 0;
     }
     
     public void act() 
@@ -44,10 +49,17 @@ public class Rocket extends Actor
     
     public void shoot()
     {
+        
+        World w = getWorld();
         if (Greenfoot.isKeyDown("space"))
         {
-            World w = getWorld();
-            w.addObject(new Bullet(), getX(), getY());
-        }
+            shootCounter += 1;
+            System.out.println(shootCounter);
+            
+            if (shootCounter == shootSpeed) { 
+                w.addObject(new Bullet(), getX(), getY());
+                shootCounter = 0;
+            }
+        } 
     }
 }
