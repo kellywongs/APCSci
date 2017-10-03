@@ -21,9 +21,16 @@ public class Passworder
         while (commandRecognized == false) 
         {
             if (initialResponse.charAt(0) == 'c' ||
-                initialResponse.charAt(0) == 'C')
+                initialResponse.charAt(0) == 'C' ||
+                initialResponse.charAt(0) == '1')
             {
                 commandRecognized = true;
+                
+                if (initialResponse.charAt(0) == '1')
+                {
+                    System.out.println("getting a little pedantic, are we?");
+                }
+                
                 System.out.println("account creation initiated.");
                 System.out.print("enter a password: ");
                 String password = passwordCreator.next();
@@ -39,19 +46,26 @@ public class Passworder
                         System.out.print("enter password: ");
                         password = passwordCreator.next();
                     } else {
-                        System.out.print("acceptable password, have a horrible day");
+                        System.out.println("acceptable password, have a horrible day");
                         strongPass = true;
                     }
                 }
             } else if (initialResponse.charAt(0) == 'l' ||
-                       initialResponse.charAt(0) == 'L')
+                       initialResponse.charAt(0) == 'L' ||
+                       initialResponse.charAt(0) == '2')
             {
                 commandRecognized = true;
                 
+                if (initialResponse.charAt(0) == '2')
+                {
+                    System.out.println("getting a little pedantic, are we?");
+                }
+                
+                System.out.println("login initiated, ");
                 System.out.print("please enter organization password: ");
                 String organizationPassword = "Carmel Padres";
                 boolean passwordMatches = false;
-                String passwordCheck = passwordChecker.next();
+                String passwordCheck = passwordChecker.nextLine();
                 
                 while (passwordMatches == false)
                 {
@@ -59,18 +73,21 @@ public class Passworder
                     {
                         System.out.println("nice going");
                         passwordMatches = true;
-                    } else if (passwordCheck.equalsIgnoreCase(organizationPassword))
+                        
+                        
+                    } else if (passwordCheck.equalsIgnoreCase(organizationPassword) &&
+                               passwordCheck.equals(organizationPassword) == false)
                     {
                         System.out.println("password is case sensitive");
                         System.out.print("enter organization password: ");
-                        passwordCheck = passwordChecker.next();
+                        passwordCheck = passwordChecker.nextLine();
                     } else 
                     {
                         System.out.println("you're just wrong sorry, ");
-                        // System.out.print("enter organization password: ");
-                        passwordMatches = false;
-                        passwordCheck = passwordChecker.next();
-                        
+                        System.out.print("enter organization password: ");
+                        // passwordMatches = false;
+                        passwordCheck = passwordChecker.nextLine();
+                        System.out.println(passwordCheck);
                     }
                 }
                 
