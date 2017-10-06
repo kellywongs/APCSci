@@ -15,8 +15,8 @@ public class SpaceElimination
      * 4. the 0 index is now the start of the next word, rinse and repeat
      * 
      * ..
-     * 10. finally print out your finalString plus the straggler word
-     *     from the original stringVariable
+     * x. finally print out your finalString plus the straggler word
+     *    from the original stringVariable
      */
     public static void main(String[] args)
     {
@@ -24,7 +24,8 @@ public class SpaceElimination
         
         Scanner stringVariableScanner = new Scanner(System.in);
         System.out.print("enter string variable: ");
-        String stringVariable = stringVariableScanner.nextLine();
+        String s = stringVariableScanner.nextLine();
+        String stringVariable = s;
         
         while (stringVariable.indexOf(" ") != -1)
         {
@@ -33,5 +34,21 @@ public class SpaceElimination
         }
         
         System.out.println(finalString + stringVariable);
+        
+        // letter by letter by letter
+        int indexCount = 0;
+        String letterByLetter = "";
+        
+        while (indexCount != s.length())
+        {
+            if (s.charAt(indexCount) != ' ') 
+            {
+                letterByLetter += s.charAt(indexCount);
+            }
+            
+            indexCount += 1;
+        }
+        
+        System.out.println(letterByLetter);
     }
 }
