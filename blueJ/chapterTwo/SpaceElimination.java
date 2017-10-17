@@ -33,9 +33,9 @@ public class SpaceElimination
             stringVariable = stringVariable.substring(stringVariable.indexOf(" ")+1);
         }
         
-        System.out.println(finalString + stringVariable);
+            System.out.println(finalString + stringVariable);
         
-        // letter by letter by letter
+        // letter by letter by letterfdsafdsafdsa
         int indexCount = 0;
         String letterByLetter = "";
         
