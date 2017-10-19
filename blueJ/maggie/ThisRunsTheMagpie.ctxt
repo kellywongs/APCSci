@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=ThisRunsTheMagpie
+comment0.text=\r\n\ creates\ a\ new\ bird\ and\ continues\ feeding\ it\ information\ \r\n\ until\ you\ say\ some\ variant\ of\ goodbye\r\n\r\n\ @Kelly\ Wong\r\n\ @October\ 2017\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
