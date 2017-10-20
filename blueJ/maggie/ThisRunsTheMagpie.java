@@ -20,7 +20,7 @@ public class ThisRunsTheMagpie
         
         while (!statement.equalsIgnoreCase("Bye"))
         {
-            System.out.println(birb.conversation());
+            System.out.println(birb.conversation(statement));
             statement = in.nextLine();
         }
     }

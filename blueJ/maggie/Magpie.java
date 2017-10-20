@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Write a description of class Magpie here.
@@ -18,15 +18,14 @@ public class Magpie
     {
         String response = "";
         
-        String[] affirmative =
-            {"yes ", "ye ", "yeah ", "sure ", "ok "};
         
-            
+        String[] talking = {"talk", "chat"};
         
-        if (affirmative.contains(statement.toLowerCase()) && 
-            talking.contains(statement.toLowerCase()))
+        if (mentionsAffirmative(statement) &&
+            mentionsTalking(statement))
         {
             response = howGoesIt();
+            System.out.println("this workds");
         }
             
         return response;
@@ -43,9 +42,49 @@ public class Magpie
     private String invitationToTalk()
     {
         String[] invitationToTalkList = 
-            {"Wanna talk?", "Let's talk.", "Wanna chat?", "Let's chat.", ""};
+            {"Wanna talk?", "Let's talk.", "Wanna chat?", "Let's chat.", 
+             "Let's talk about things.", "What's going on?", "How are you doing?",
+             ""};
         
         return(invitationToTalkList[(int)(Math.random()*invitationToTalkList.length)]);
+    }
+    
+    private boolean mentionsAffirmative(String statement)
+    {
+        String[] affirmativeList = {"yeah", "ye"};
+        int arrayCounter = 0;
+        boolean statementContains = false;
+        
+        while (arrayCounter != statement.length()+1)
+        {
+            if (statement.contains(affirmativeList[arrayCounter]))
+            {
+                statementContains = true;
+                break;
+            }
+            arrayCounter ++;
+        }
+        
+        return statementContains;
+    }
+    
+    private boolean mentionsTalking(String statement)
+    {
+        String[] talkingList = {"talk", "chat"};
+        int arrayCounter = 0;
+        boolean statementContains = false;
+        
+        while (arrayCounter != statement.length()+1)
+        {
+            if (statement.contains(talkingList[arrayCounter]))
+            {
+                statementContains = true;
+                break;
+            }
+            arrayCounter ++;
+        }
+        
+        return statementContains;
     }
     
     private String howGoesIt()
