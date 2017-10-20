@@ -11,90 +11,106 @@ public class Magpie
     
     public String greeting() 
     {
-        return(sayHi() + " " + invitationToTalk());
+        return(sayHi() + invitationToTalk());
     }
+    
+    /* the actual conversation engine */
     
     public String conversation(String statement)
     {
         String response = "";
-        
-        
-        String[] talking = {"talk", "chat"};
+        statement = statement.toLowerCase();
         
         if (mentionsAffirmative(statement) &&
             mentionsTalking(statement))
         {
             response = howGoesIt();
-            System.out.println("this workds");
         }
+        
+       // if (mentionsSelf(statement) && mentionsWellbeing(statement))
+       // {
+       //    response = reciprocateWellness();
+       // }
             
         return response;
     }
     
+    /* responses */
+    
     private String sayHi()
     {
-        String[] sayHiList = 
-            {"Hi!", "Hello!", "Salutations!", "Greetings!", "Nice day out!"};
+        String[] list = 
+            {"Hi! ", "Hello! ", "Salutations! ", "Greetings! ", "Nice day out! "};
         
-        return(sayHiList[(int)(Math.random()*sayHiList.length)]);
+        return(list[(int)(Math.random()*list.length)]);
     }
     
     private String invitationToTalk()
     {
-        String[] invitationToTalkList = 
-            {"Wanna talk?", "Let's talk.", "Wanna chat?", "Let's chat.", 
-             "Let's talk about things.", "What's going on?", "How are you doing?",
-             ""};
+        String[] list = 
+            {"Wanna talk? ", "Let's talk. ", "Wanna chat? ", "Let's chat. ", 
+             "Let's talk about things. ", "What's going on? ", "How are you doing? ",
+             " "};
         
-        return(invitationToTalkList[(int)(Math.random()*invitationToTalkList.length)]);
-    }
-    
-    private boolean mentionsAffirmative(String statement)
-    {
-        String[] affirmativeList = {"yeah", "ye"};
-        int arrayCounter = 0;
-        boolean statementContains = false;
-        
-        while (arrayCounter != statement.length()+1)
-        {
-            if (statement.contains(affirmativeList[arrayCounter]))
-            {
-                statementContains = true;
-                break;
-            }
-            arrayCounter ++;
-        }
-        
-        return statementContains;
-    }
-    
-    private boolean mentionsTalking(String statement)
-    {
-        String[] talkingList = {"talk", "chat"};
-        int arrayCounter = 0;
-        boolean statementContains = false;
-        
-        while (arrayCounter != statement.length()+1)
-        {
-            if (statement.contains(talkingList[arrayCounter]))
-            {
-                statementContains = true;
-                break;
-            }
-            arrayCounter ++;
-        }
-        
-        return statementContains;
+        return(list[(int)(Math.random()*list.length)]);
     }
     
     private String howGoesIt()
     {
-        String[] howGoesItList = 
-            {"How are you doing?", "What's been going on?", "How are you?",
-             "What's happening?"};
+        String[] list = 
+            {"How are you doing? ", "What's been going on? ", "How are you? ",
+             "What's happening? "};
              
-        return(howGoesItList[(int)(Math.random()*howGoesItList.length)]);
+        return(list[(int)(Math.random()*list.length)]);
     }
     
+    /* check if statement mentions things in arrays down here */
     
+    private boolean mentions(String statement, String list)
+    {
+        int arrayCounter = 0;
+        boolean statementContains = false;
+        
+        while (arrayCOunter != statement.length()+1)
+        {
+            if (statement.contains(list[arrayCOunter]))
+            {
+                statementContains = true;
+                break;
+            }
+            arrayCounter ++;
+        }
+        
+        return statementContains;
+    }
+    
+    private boolean mentionsAffirmative(String statement)
+    {
+        String[] list = {"yeah", "ye ", " ye", "yes", "sure", "okay" "ok", "course"};
+        return statement.mentions(statement, list); // TODO: possibly put "statement, list" on every single calling of mentions()
+    }
+    
+    private boolean mentionsTalking(String statement)
+    {
+        String[] list = {"talk", "chat", "speak"};
+        return statement.mentions();
+    }
+    
+    private boolean mentionsSelf(String statement)
+    {
+        String[] list = {"me", "i ", "my", "self"};
+        return statement.mentions();
+    }
+    
+    private boolean mentionsWellbeing(String statement)
+    {
+        String[] list = {"good", "well", "great", "snazzy", "ok"} //TODO: "just ok?"
+        return statement.mentions();
+    }
+    
+    private boolean mentionsNegative(String statement)
+    {
+        String[] list = {"not", "never", "no", "nah"}
+        return statement.mentions();
+    }
 }
