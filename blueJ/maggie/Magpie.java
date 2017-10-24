@@ -21,52 +21,85 @@ public class Magpie
         String response = "";
         statement = statement.toLowerCase();
 
-        if ((mentionsAffirmative(statement) || mentionsGreeting(statement)) &&
-            mentionsTalking(statement))
+        if (mentionsAffirmative(statement) || mentionsGreeting(statement))
         {
-            response = howGoesIt();
+            response += howGoesIt();
+        }
+        
+        if (mentionsNegative(statement))
+        {
+            response += expressSympathy() + why();
         }
 
         if (mentionsSelf(statement) && 
-            mentionsWellbeing(statement))
+            mentionsGoodAdj(statement))
         {
             if (mentionsNegative(statement)) 
             {
-                response = expressSympathy() + why();
+                if (mentionsModifier(statement))
+                {
+                    response += expressSympathy();
+                }
+                response += why();
             } else {
-                response = reciprocate() + wellness();
+                response += reciprocate() + wellness();
             }
+        } else if (mentionsSelf(statement) &&
+                   mentionsBadAdj(statement)) 
+        {
+            if (mentionsModifier(statement))
+            {
+                response += expressSympathy();
+            }
+            response += why();
         }
         
         if (mentionsHow(statement) &&
-            isQuestion(statement))
+            mentionsMagpie(statement))
         {
-            response = wellness();
+            response += wellness() + thank() + "for asking!";
+        }
+        
+        if (mentionsJoke(statement))
+        {
+           response += joke();
+        }
+        
+        /* at the very end if nothing matches */
+        
+        if (response.equals(""))
+        {
+            response += cannotParse();
         }
 
         return response;
     }
 
     /* responses */
-
-    private String sayHi()
+    
+    private String cannotParse()
     {
         String[] list = 
-            {"Hi!", "Hello!", "Salutations!", "Greetings!", "Nice day out!"};
+            {"I'm sorry, I can't understand that.", 
+             "I don't understand what you mean.",
+             "I would give you a noncommital response, but unfortunately I don't know what you said.",
+             "Can you repeat that?",
+             "I haven't been trained to respond to that, I'm sorry!",
+             "I'm not sure what you said.",
+             "Guess that means I gotta study harder to pass the Turing test!"};
 
         return(list[(int)(Math.random()*list.length)] + " ");
     }
-
-    private String invitationToTalk()
+    
+    private String expressSympathy()
     {
         String[] list = 
-            {"Wanna talk?", "Let's talk.", "Wanna chat?", "Let's chat.", 
-                "Let's talk about things.", "What's going on?", "How are you doing?",
-                ""};
+            {"Oh no!", "Oh dear.", "I'm sorry.", "Uh oh!", "Jeez, that sucks.",
+            "What!"};
 
         return(list[(int)(Math.random()*list.length)] + " ");
     }
-
+    
     private String howGoesIt()
     {
         String[] list = 
@@ -76,11 +109,57 @@ public class Magpie
         return(list[(int)(Math.random()*list.length)] + " ");
     }
     
-    private String expressSympathy()
+    private String invitationToTalk()
     {
         String[] list = 
-            {"Oh no!", "Oh dear.", "I'm sorry.", "Uh oh!", "Jeez, that sucks,",
-            "What!"};
+            {"Wanna talk?", "Let's talk.", "Wanna chat?", "Let's chat.", 
+                "Let's talk about things.", "What's going on?", "How are you doing?",
+                ""};
+
+        return(list[(int)(Math.random()*list.length)] + " ");
+    }
+    
+    private String joke()
+    {
+        String[] list = 
+            {"If I told you a joke in my language, I'd have to explain it.",
+             "The past, the future, and the present walk into a bar. \n It was tense.",
+             "What do you call a Frenchman wearing sandals? \n Philippe Philoppe.",};
+
+        return(list[(int)(Math.random()*list.length)] + " ");
+    }
+    
+    private String reciprocate()
+    {
+        String[] list = 
+            {"Me too,", "Same,", "Same here!", "Hey, same!"};
+
+        return(list[(int)(Math.random()*list.length)] + " ");
+    }
+
+    private String sayHi()
+    {
+        String[] list = 
+            {"Hi!", "Hello!", "Salutations!", "Greetings!", "Nice day out!"};
+
+        return(list[(int)(Math.random()*list.length)] + " ");
+    }
+    
+    private String thank()
+    {
+        String[] list = 
+            {"Thanks", "Thanks a lot", "Thank",};
+
+        return(list[(int)(Math.random()*list.length)] + " ");
+    }
+    
+    private String wellness()
+    {
+        String[] list = 
+            {"I'm doing good.", "I'm feeling good!", 
+                "It's a nice day, I'm feeling good!",
+                "I got a lot of sleep last night so I'm feeling good.",
+                "I'm actually doing really well!"};
 
         return(list[(int)(Math.random()*list.length)] + " ");
     }
@@ -93,19 +172,10 @@ public class Magpie
         return(list[(int)(Math.random()*list.length)] + " ");
     }
     
-    private String reciprocate()
+    private String yes()
     {
         String[] list = 
-            {"Me too,", "Same,", "Same here!", "Hey, same!"};
-
-        return(list[(int)(Math.random()*list.length)] + " ");
-    }
-
-    private String wellness()
-    {
-        String[] list = 
-            {"I'm doing good as well.", "I'm feeling good!", 
-                "It's a nice day, I'm feeling good!"};
+            {"Yeah", "Sure", "Definitely", "Oh yes", "God yes", "Ye"};
 
         return(list[(int)(Math.random()*list.length)] + " ");
     }
@@ -117,33 +187,39 @@ public class Magpie
                 "okay", "ok", "course"};
         return mentions(statement, list); 
     }
+    
+    private boolean mentionsBadAdj(String statement)
+    {
+        String[] list = {"bad", "horr", "terr", "disgust"}; 
+        return mentions(statement, list);
+    }
 
+    private boolean mentionsGoodAdj(String statement)
+    {
+        String[] list = {"good", "well", "great", "snazzy", "ok",
+            "hot",}; //TODO: "just ok?"
+        return mentions(statement, list);
+    }
+    
     private boolean mentionsGreeting(String statement)
     {
         String[] list = {"hi", "hello", "yo ", "yello ", "sup", "hey",
                 "wassup", "what's good", "salutations"};
         return mentions(statement, list); 
     }
-
-    private boolean mentionsTalking(String statement)
+    
+    private boolean mentionsHow(String statement)
     {
-        String[] list = {"talk", "chat", "speak"};
+        String[] list = {"how",};
         return mentions(statement, list);
     }
-
-    private boolean mentionsSelf(String statement)
+    
+    private boolean mentionsJoke(String statement)
     {
-        String[] list = {"me", "i ", "my", "self", "i'm",};
+        String[] list = {"joke",};
         return mentions(statement, list);
     }
-
-    private boolean mentionsWellbeing(String statement)
-    {
-        String[] list = {"good", "well", "great", "snazzy", "ok",
-            "hot",}; //TODO: "just ok?"
-        return mentions(statement, list);
-    }
-
+    
     private boolean mentionsNegative(String statement)
     {
         String[] list = {"not", "never", "no", "nah"};
@@ -159,13 +235,19 @@ public class Magpie
     
     private boolean mentionsMagpie(String statement)
     {
-        String[] list = {"you", " u ", "magpie", "maggie"};
+        String[] list = {"you", "ur", "u ", " u", "mag"};
+        return mentions(statement, list);
+    }
+
+    private boolean mentionsSelf(String statement)
+    {
+        String[] list = {"me", "i ", "my", "self", "i'm",};
         return mentions(statement, list);
     }
     
-    private boolean mentionsHow(String statement)
+    private boolean mentionsTalking(String statement)
     {
-        String[] list = {"how",};
+        String[] list = {"talk", "chat", "speak"};
         return mentions(statement, list);
     }
     
@@ -174,7 +256,7 @@ public class Magpie
         String[] list = {"?"};
         return mentions(statement, list);
     }
-
+    
     private boolean mentions(String statement, String[] list)
     {
         int arrayCounter = 0;
