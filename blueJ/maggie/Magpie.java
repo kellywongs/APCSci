@@ -23,11 +23,13 @@ public class Magpie
 
         if (mentionsAffirmative(statement) || mentionsGreeting(statement))
         {
+            System.out.println("affirmative, greeting");
             response += howGoesIt();
         }
         
         if (mentionsNegative(statement))
         {
+            System.out.println("negative");
             response += expressSympathy() + why();
         }
 
@@ -38,10 +40,12 @@ public class Magpie
             {
                 if (mentionsModifier(statement))
                 {
+                    System.out.println("negative > modifier");
                     response += expressSympathy();
                 }
                 response += why();
             } else {
+                System.out.println("self + good adj");
                 response += reciprocate() + wellness();
             }
         } else if (mentionsSelf(statement) &&
@@ -49,19 +53,23 @@ public class Magpie
         {
             if (mentionsModifier(statement))
             {
+                System.out.println("self + bad adj > modifier");
                 response += expressSympathy();
             }
+            System.out.println("self + bad adj");
             response += why();
         }
         
         if (mentionsHow(statement) &&
             mentionsMagpie(statement))
         {
+            System.out.println("how + magpie");
             response += wellness() + thank() + "for asking!";
         }
         
         if (mentionsJoke(statement))
         {
+           System.out.println("joke");
            response += joke();
         }
         
@@ -184,7 +192,7 @@ public class Magpie
     private boolean mentionsAffirmative(String statement)
     {
         String[] list = {"yeah", "ye ", " ye", "yes", "sure", 
-                "okay", "ok", "course"};
+                "okay", "ok\n", "ok ", "course"};
         return mentions(statement, list); 
     }
     
@@ -196,7 +204,7 @@ public class Magpie
 
     private boolean mentionsGoodAdj(String statement)
     {
-        String[] list = {"good", "well", "great", "snazzy", "ok",
+        String[] list = {"good", "well", "great", "snazzy", "ok\n", "ok ",
             "hot",}; //TODO: "just ok?"
         return mentions(statement, list);
     }
@@ -256,17 +264,19 @@ public class Magpie
         String[] list = {"?"};
         return mentions(statement, list);
     }
-    
+   
     private boolean mentions(String statement, String[] list)
     {
         int arrayCounter = 0;
         boolean statementContains = false;
+        String keyMatcher = "";
 
         while (arrayCounter != list.length)
         {
             if (statement.contains(list[arrayCounter]))
             {
                 statementContains = true;
+                keyMatcher = list[arrayCounter];
                 break;
             }
             arrayCounter ++;
