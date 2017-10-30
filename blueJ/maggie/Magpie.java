@@ -20,6 +20,8 @@ public class Magpie
     {
         String response = "";
         statement = statement.toLowerCase();
+        
+        cutUpStatement(statement);
 
         if (mentionsAffirmative(statement) || mentionsGreeting(statement))
         {
@@ -282,6 +284,27 @@ public class Magpie
             arrayCounter ++;
         }
 
+        
         return statementContains;
+    }
+    
+    private List cutUpStatement(String statement) 
+    {
+        List<String> statementArray = new ArrayList<String>();
+        int indexCounter = 0;
+        
+        while (statement.indexOf(" ") != -1)
+        {
+            // statementArray.add(statement.substring(indexCounter, statement.indexOf(" ")));
+            // indexCounter += statement.indexOf(" ");
+            
+            statementArray.add(statement.substring(0, statement.indexOf(" ")));
+            statement = statement.substring(statement.indexOf(" "));
+        }
+        
+        statementArray.add(statement.substring(indexCounter));
+        
+        System.out.println(statementArray);
+        return statementArray;
     }
 }
