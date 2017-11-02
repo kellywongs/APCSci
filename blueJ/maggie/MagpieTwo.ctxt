@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MagpieTwo
+comment1.params=
+comment1.target=java.lang.String\ greeting()
+comment2.params=input
+comment2.target=java.lang.String\ conversation(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ invitationToTalk()
+comment4.params=
+comment4.target=java.lang.String\ sayHi()
+numComments=5

@@ -16,31 +16,31 @@ public class Magpie
 
     /* the actual conversation engine */
 
-    public String conversation(String statement)
+    public String conversation(String input)
     {
         String response = "";
-        statement = statement.toLowerCase();
-        
-        cutUpStatement(statement);
+        input = input.toLowerCase();
+        String[] statement = input.split(" "); ;
+        int wordCounter = 0;
 
-        if (mentionsAffirmative(statement) || mentionsGreeting(statement))
+        if (mentionsAffirmative(statement[wordCounter]) || mentionsGreeting(statement[wordCounter]))
         {
             System.out.println("affirmative, greeting");
             response += howGoesIt();
         }
         
-        if (mentionsNegative(statement))
+        if (mentionsNegative(statement[wordCounter]))
         {
             System.out.println("negative");
             response += expressSympathy() + why();
         }
 
-        if (mentionsSelf(statement) && 
-            mentionsGoodAdj(statement))
+        if (mentionsSelf(statement[wordCounter]) && 
+            mentionsGoodAdj(statement[wordCounter]))
         {
-            if (mentionsNegative(statement)) 
+            if (mentionsNegative(statement[wordCounter])) 
             {
-                if (mentionsModifier(statement))
+                if (mentionsModifier(statement[wordCounter]))
                 {
                     System.out.println("negative > modifier");
                     response += expressSympathy();
@@ -50,10 +50,10 @@ public class Magpie
                 System.out.println("self + good adj");
                 response += reciprocate() + wellness();
             }
-        } else if (mentionsSelf(statement) &&
-                   mentionsBadAdj(statement)) 
+        } else if (mentionsSelf(statement[wordCounter]) &&
+                   mentionsBadAdj(statement[wordCounter])) 
         {
-            if (mentionsModifier(statement))
+            if (mentionsModifier(statement[wordCounter]))
             {
                 System.out.println("self + bad adj > modifier");
                 response += expressSympathy();
@@ -62,14 +62,14 @@ public class Magpie
             response += why();
         }
         
-        if (mentionsHow(statement) &&
-            mentionsMagpie(statement))
+        if (mentionsHow(statement[wordCounter]) &&
+            mentionsMagpie(statement[wordCounter]))
         {
             System.out.println("how + magpie");
             response += wellness() + thank() + "for asking!";
         }
         
-        if (mentionsJoke(statement))
+        if (mentionsJoke(statement[wordCounter]))
         {
            System.out.println("joke");
            response += joke();
@@ -190,7 +190,7 @@ public class Magpie
         return(list[(int)(Math.random()*list.length)] + " ");
     }
 
-    /* check if statement mentions things in arrays down here */
+    /* check if statement[wordCounter] mentions things in arrays down here */
     private boolean mentionsAffirmative(String statement)
     {
         String[] list = {"yeah", "ye ", " ye", "yes", "sure", 
@@ -208,63 +208,64 @@ public class Magpie
     {
         String[] list = {"good", "well", "great", "snazzy", "ok\n", "ok ",
             "hot",}; //TODO: "just ok?"
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
+    
     
     private boolean mentionsGreeting(String statement)
     {
         String[] list = {"hi", "hello", "yo ", "yello ", "sup", "hey",
                 "wassup", "what's good", "salutations"};
-        return mentions(statement, list); 
+        return mentions(statement, list);  
     }
     
     private boolean mentionsHow(String statement)
     {
         String[] list = {"how",};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
     
     private boolean mentionsJoke(String statement)
     {
         String[] list = {"joke",};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
     
     private boolean mentionsNegative(String statement)
     {
         String[] list = {"not", "never", "no", "nah"};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
 
     private boolean mentionsModifier(String statement)
     {
         String[] list = {"really", "very", "super", "extremely", "v ",
                 " af", "real", "so "};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
     
     private boolean mentionsMagpie(String statement)
     {
         String[] list = {"you", "ur", "u ", " u", "mag"};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
 
     private boolean mentionsSelf(String statement)
     {
         String[] list = {"me", "i ", "my", "self", "i'm",};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
     
     private boolean mentionsTalking(String statement)
     {
         String[] list = {"talk", "chat", "speak"};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
     
     private boolean isQuestion(String statement)
     {
         String[] list = {"?"};
-        return mentions(statement, list);
+        return mentions(statement, list); 
     }
    
     private boolean mentions(String statement, String[] list)
@@ -283,28 +284,6 @@ public class Magpie
             }
             arrayCounter ++;
         }
-
-        
         return statementContains;
-    }
-    
-    private List cutUpStatement(String statement) 
-    {
-        List<String> statementArray = new ArrayList<String>();
-        int indexCounter = 0;
-        
-        while (statement.indexOf(" ") != -1)
-        {
-            // statementArray.add(statement.substring(indexCounter, statement.indexOf(" ")));
-            // indexCounter += statement.indexOf(" ");
-            
-            statementArray.add(statement.substring(0, statement.indexOf(" ")));
-            statement = statement.substring(statement.indexOf(" "));
-        }
-        
-        statementArray.add(statement.substring(indexCounter));
-        
-        System.out.println(statementArray);
-        return statementArray;
     }
 }

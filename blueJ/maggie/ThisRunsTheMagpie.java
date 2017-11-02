@@ -12,16 +12,16 @@ public class ThisRunsTheMagpie
 {
     public static void main(String[] args)
     {
-        Magpie birb = new Magpie();
+        MagpieTwo birb = new MagpieTwo();
         
         System.out.println(birb.greeting());
         Scanner in = new Scanner(System.in);
-        String statement = in.nextLine();
+        String input = in.nextLine();
         
-        while (!statement.equalsIgnoreCase("Bye"))
+        while (!input.equalsIgnoreCase("Bye"))
         {
-            System.out.println(birb.conversation(statement));
-            statement = in.nextLine();
+            System.out.println(birb.conversation(input));
+            input = in.nextLine();
         }
     }
 }
