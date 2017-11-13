@@ -23,12 +23,6 @@ public class tester
             // }
         // }
         
-        String g = "midnight";
-        String s = "the dog howls at midnight";
-        
-        if (s.substring(s.lastIndexOf(" "), s.length()).equals(g))
-        { System.out.println("ye"); } else { System.out.println("no"); }
-        
-        System.out.println(s.substring(s.lastIndexOf(" "), s.length()));
+        System.out.println("ab".compareTo("ba"));
     }
 }
