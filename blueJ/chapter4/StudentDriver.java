@@ -8,7 +8,15 @@
 public class StudentDriver
 {
     public static void main(String[] args) {
-        Student kid = new Student();
-        System.out.println(kid.toString());
+        
+        
+        
+        Student kelly = new Student("Kelly", "Wong", "female", 11, 7966, 9.0);
+        
+        while (1==1) {
+            Student kid = new Student();
+            System.out.println(kid.toString());
+            System.out.println(kelly.toString());
+        }
     }
 }
