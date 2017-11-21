@@ -17,6 +17,8 @@ public class StudentDriver
             Student kid = new Student();
             System.out.println(kid.toString());
             System.out.println(kelly.toString());
+            kelly.setGPA(4.0);
+            System.out.println(kelly.getGPA());
         }
     }
 }

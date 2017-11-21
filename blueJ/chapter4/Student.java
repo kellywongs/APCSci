@@ -10,7 +10,7 @@ public class Student
 {
     // instance variables are declared
     private double gpa;
-    private int grade, idNum;
+    private int grade, idNum, units;
     private String firstName, lastName, gender;
 
     // DEFAULT constructor for objects of class student, makes generic object
@@ -19,6 +19,7 @@ public class Student
     {
         // initialise instance variables
         this.gpa = 0.0;
+        this.units = 0;
         this.grade = 9;
         this.idNum = 0000;
         this.firstName = "John";
@@ -50,10 +51,62 @@ public class Student
         return this.gpa;
     }
     
-    public void setGPA(double originalGPA)
+    public void setGPA(double original)
     {
-        this.gpa = originalGPA;
+        this.gpa = original;
     }
+    
+    public int getGrade()
+    {
+        return this.grade;
+    }
+    
+    public void setGrade(int original)
+    {
+        this.grade = original;
+    }
+    
+    public int getID()
+    {
+        return this.idNum;
+    }
+    
+    public void setID(int original)
+    {
+        this.idNum = original;
+    }
+    
+    public String getFirstName()
+    {
+        return this.firstName;
+    }
+    
+    public void setFirstName(String original)
+    {
+        this.firstName = original;
+    }
+    
+    public String getLastName()
+    {
+        return this.lastName;
+    }
+    
+    public void setLastName(String original)
+    {
+        this.lastName = original;
+    }
+    
+    public String getGender()
+    {
+        return this.gender;
+    }
+    
+    public void setGender(String original)
+    {
+        this.gender = original;
+    }
+    
+    // public boolean areEqual(
 
     public String toString()
     { 
