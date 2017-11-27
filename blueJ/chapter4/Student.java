@@ -106,7 +106,15 @@ public class Student
         this.gender = original;
     }
     
-    // public boolean areEqual(
+    public boolean areEqual(Student other)
+    {
+        if (other.getID() == this.getID())
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public String toString()
     { 
