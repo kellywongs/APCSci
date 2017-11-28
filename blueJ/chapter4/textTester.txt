@@ -1,65 +1,65 @@
-Fred Flintstone
-Marissa Stephenson
-Suzanne Perrie
-John Altwood
-Heather Mayer
-Lindsay Bender
-Kit Fox
-Kristen Parker
-Matt Gross
-Robert James
-Brian Dailer
-Chris Michael
-Ali Nolan
-Hannah McDougal
-Manica Grater
-David Graph
-Kate Bernal
-Grace Hafner
-Bob Sleeth
-Maria Domingo
-Gene Brown
-Budd Coates
-Sal Carusso
-Pilar Silva
-John Armstrong
-Sam Levy
-Pam Anderson
-Juan Sanchez
-Jordan Meltz
-Jack Baum
-Mike Murphy
-David Pultz
-John Rivera
-Scott Moore
-Tom Casas
-Chris Zepeda
-Sam Lazerus
-Monica Nicholson
-Karina Sterrett
-Chris Montenegro
-Rich Johnson
-Brendan Martin
-Craig Rose
-Virgina Simon
-David Delucchi
-Joe Silveira
-Jim Tiffany
-Paige Colinnette
-Zach Valentine
-Andrea Page
-Richard Johnstone
-Chris Volk
-Robin Blakeley
-Jorge Lopez
-Brian Erbelle
-Nick Thiel
-Dan Shapiro
-Rick Ferrell
-Melissa Peterson
-Veronica Ramirez
-Josh Felder
-Linda Sereno
-Paul Fellinger
-Tony Bruemmer
-David Hartman
+Fred Flintstone M
+Marissa Stephenson F
+Suzanne Perrie F
+John Altwood M 
+Heather Mayer F
+Lindsay Bender F
+Kit Fox M
+Kristen Parker F
+Matt Gross M
+Robert James M
+Brian Dailer M
+Chris Michael M
+Ali Nolan F
+Hannah McDougal F
+Monica Grater F
+David Graph M
+Kate Bernal F
+Grace Hafner F
+Bob Sleeth M
+Maria Domingo F
+Gene Brown M
+Budd Coates M
+Sal Carusso M
+Pilar Silva F
+John Armstrong M
+Sam Levy M
+Pam Anderson F
+Juan Sanchez M
+Jordan Meltz F
+Jack Baum M F
+Mike Murphy M
+David Pultz M
+John Rivera M
+Scott Moore M
+Tom Casas M
+Chris Zepeda M
+Sam Lazerus M
+Monica Nicholson F
+Karina Sterrett F
+Chris Montenegro F
+Rich Johnson M
+Brendan Martin M
+Craig Rose M
+Virgina Simon F
+David Delucchi M
+Joe Silveira M
+Jim Tiffany M
+Paige Colinnette F
+Zach Valentine M
+Andrea Page F
+Richard Johnstone M
+Christine Volk F
+Robin Blakeley F
+Jorge Lopez M
+Brian Erbelle M
+Nick Thiel M
+Dan Shapiro M
+Rick Ferrell M
+Melissa Peterson F
+Veronica Ramirez F
+Josh Felder M
+Linda Sereno F
+Paul Fellinger M
+Tony Bruemmer M
+David Hartman M
