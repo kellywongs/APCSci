@@ -31,11 +31,12 @@ public class StudentDriver2
                 String f = sCurrentLine.substring(0, index);
                 String l = sCurrentLine.substring(index+1);
                 rand = (int)(Math.random()*900)+100;
+                double randGPA = ((int)(Math.random()*450))/100.0;
                 if (Math.random() > 0.5) {
-                    myClass[i] = new Student(f, l, "male", 9, rand, 0.0);
+                    myClass[i] = new Student(f, l, "male", 9, rand, randGPA);
                 }
                 else {
-                    myClass[i] = new Student(f, l, "female", 9, rand, 0.0);
+                    myClass[i] = new Student(f, l, "female", 9, rand, randGPA);
                 }
                 i++;
 
@@ -47,8 +48,23 @@ public class StudentDriver2
             e.printStackTrace();
         } 
         
-        for(int j = 0; j<myClass.length; j++)
-            System.out.println(myClass[j].toString());
+        for(int j = 0; j<myClass.length; j++){
+            System.out.println(myClass[j].toString());}
+        
+        int highestIndex = 0;
+        double highestGPA = myClass[0].getGPA(); 
+        String highestGPAStudent = myClass[0].getFirstName() + " " + myClass[0].getLastName();
+        for (int indexer = 0; indexer<myClass.length; indexer++)
+        {
+            if (myClass[indexer].getGPA() > highestGPA)
+            {
+                highestGPA = myClass[indexer].getGPA();
+                highestGPAStudent = myClass[indexer].getFirstName() + 
+                " " + myClass[indexer].getLastName();
+            }
+        }
+        System.out.println("highest GPA: " + highestGPAStudent + " " + highestGPA);
+        
         
     }
     
