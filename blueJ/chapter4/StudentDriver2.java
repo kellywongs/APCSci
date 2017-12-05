@@ -48,6 +48,7 @@ public class StudentDriver2
             e.printStackTrace();
         } 
         
+        
         for(int j = 0; j<myClass.length; j++){
             System.out.println(myClass[j].toString());}
         
@@ -58,15 +59,29 @@ public class StudentDriver2
         {
             if (myClass[indexer].getGPA() > highestGPA)
             {
-                highestGPA = myClass[indexer].getGPA();
-                highestGPAStudent = myClass[indexer].getFirstName() + 
-                " " + myClass[indexer].getLastName();
+                highestIndex = indexer;
             }
         }
-        System.out.println("highest GPA: " + highestGPAStudent + " " + highestGPA);
+        System.out.println("highest GPA: " + myClass[highestIndex].getFirstName() + 
+                 " " + myClass[highestIndex].getLastName() + 
+        " " + myClass[highestIndex].getGPA());
         
-        
-    }
+        Student temp = myClass[0];
+        myClass[0] = myClass[highestIndex];
+        myClass[highestIndex] = temp;
+    // }
     
-  
+    // private static void countGirls(Student[] group) 
+    // {
+        int girls = 0;
+        
+        for (int indexer = 0; indexer<myClass.length; indexer++)
+        {
+            if (myClass[indexer].getGender().equals("female"))
+            { 
+             girls += 1;
+            }
+        }
+        System.out.println("girls: " + girls);
+    }
 }
