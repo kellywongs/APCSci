@@ -58,16 +58,16 @@ public class randomizer
         else if (newRandomNumber == 9) { frequency9 += 1; }
        
         
-        System.out.println("0: " + (frequency0 * 100 /totalNumbers) + "%");
-        System.out.println("1: " + (frequency1 * 100 /totalNumbers) + "%");
-        System.out.println("2: " + (frequency2 * 100 /totalNumbers) + "%");
-        System.out.println("3: " + (frequency3 * 100 /totalNumbers) + "%");
-        System.out.println("4: " + (frequency4 * 100 /totalNumbers) + "%");
-        System.out.println("5: " + (frequency5 * 100 /totalNumbers) + "%");
-        System.out.println("6: " + (frequency6 * 100 /totalNumbers) + "%");
-        System.out.println("7: " + (frequency7 * 100 /totalNumbers) + "%");
-        System.out.println("8: " + (frequency8 * 100 /totalNumbers) + "%");
-        System.out.println("9: " + (frequency9 * 100 /totalNumbers) + "%");
+        System.out.println("0: " + (frequency0 * 100 /totalNumbers) + "% (" + frequency0 + ")");
+        System.out.println("1: " + (frequency1 * 100 /totalNumbers) + "% (" + frequency1 + ")");
+        System.out.println("2: " + (frequency2 * 100 /totalNumbers) + "% (" + frequency2 + ")");
+        System.out.println("3: " + (frequency3 * 100 /totalNumbers) + "% (" + frequency3 + ")");
+        System.out.println("4: " + (frequency4 * 100 /totalNumbers) + "% (" + frequency4 + ")");
+        System.out.println("5: " + (frequency5 * 100 /totalNumbers) + "% (" + frequency5 + ")");
+        System.out.println("6: " + (frequency6 * 100 /totalNumbers) + "% (" + frequency6 + ")");
+        System.out.println("7: " + (frequency7 * 100 /totalNumbers) + "% (" + frequency7 + ")");
+        System.out.println("8: " + (frequency8 * 100 /totalNumbers) + "% (" + frequency8 + ")");
+        System.out.println("9: " + (frequency9 * 100 /totalNumbers) + "% (" + frequency9 + ")");
         
     }
 }
