@@ -63,12 +63,13 @@ public abstract class Dinosaur
         if (this.health > 0)
         {
             age ++;
+            weight += 5;
         }
     }
     
     public String dinosaurString()
     {   
-        return ("weight: " + weight + 
+        return ("\nweight: " + weight + 
                 "\nage: " + age +
                 "\nhealth: " + health +
                 "\ngender: " + gender + 
