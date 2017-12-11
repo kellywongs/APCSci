@@ -8,7 +8,7 @@
 public abstract class Dinosaur
 {
     // instance variables
-    public int weight;
+    private int weight;
     private int age;
     private int health;
     private String gender;
@@ -60,11 +60,17 @@ public abstract class Dinosaur
     
     public void ageUp() 
     {
-        if (this.health > 0)
+        if (this.health > 0 && age > 10)
         {
             age ++;
-            weight += 5;
-        }
+            
+            if (this.age < 10)
+            {
+                health += 10;
+            } else if (this.age >= 10 && this.age < 25)
+            {
+                health = health;
+        } 
     }
     
     public String dinosaurString()
@@ -78,4 +84,5 @@ public abstract class Dinosaur
     }
     
     public abstract boolean attack(Dinosaur other);
+    public abstract double calcFactor(Dinosaur other);
 }

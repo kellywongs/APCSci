@@ -8,13 +8,14 @@
 public class TRex extends Dinosaur
 {
     public TRex() {
-        weight += 50;
+        this.setWeight(this.getWeight()+50);
+        this.setType("t rex");
     }
     
     public boolean attack (Dinosaur other)
     { 
-        int attackerStat = ( this.getWeight() / 2 ) + this.getHealth() + 100;
-        int otherStat = (other.getWeight() / 2) + this.getHealth() + 100;
+        int attackerStat = (int)((( this.getWeight() / 2 ) + this.getHealth() + 100) * this.calcFactor(other));
+        int otherStat = (int)((other.getWeight() / 2) + other.getHealth() + 100);
         double underdogChance = Math.random(); 
         boolean won = false;
         
@@ -22,31 +23,31 @@ public class TRex extends Dinosaur
                            "\nattackee: " + otherStat);
         System.out.println("underdogChance: " + underdogChance);
                            
-        if (underdogChance == 0.1 && (attackerStat < otherStat))
+        if (underdogChance < 0.1 && (attackerStat < otherStat))
         {
-            this.setHealth(this.getHealth() - (otherStat/6));
-            other.setHealth(other.getHealth() - (attackerStat/2));
+            this.setHealth(this.getHealth() - (otherStat/40));
+            other.setHealth(other.getHealth() - (attackerStat/8));
             
             System.out.println("underdog attacker won!");
             won = true;
         } else if (underdogChance < 0.1 && (otherStat < attackerStat))
         {
-            this.setHealth(this.getHealth() - (otherStat/2));
-            other.setHealth(other.getHealth() - (attackerStat/6));
+            this.setHealth(this.getHealth() - (otherStat/8));
+            other.setHealth(other.getHealth() - (attackerStat/40));
             
             System.out.println("underdog attackee won!"); 
             won = false;
         } else if (attackerStat < otherStat)
         {
-            this.setHealth(this.getHealth() - (otherStat/2));
-            other.setHealth(other.getHealth() - (attackerStat/8));
+            this.setHealth(this.getHealth() - (otherStat/4));
+            other.setHealth(other.getHealth() - (attackerStat/50));
             
             System.out.println("attackee won!");
             won = false;
         } else if (attackerStat > otherStat)
         {
-            this.setHealth(this.getHealth() - (otherStat/8));
-            other.setHealth(other.getHealth() - (attackerStat/2));
+            this.setHealth(this.getHealth() - (otherStat/50));
+            other.setHealth(other.getHealth() - (attackerStat/4));
             
             System.out.println("attacker won!");
             won = true;
@@ -54,5 +55,24 @@ public class TRex extends Dinosaur
         System.out.println("\nattacker health: " + this.getHealth() +
                            "\nattackee health: " + other.getHealth());
         return won;
+    }
+    
+    public double calcFactor (Dinosaur other)
+    {
+        double factor = 1;
+        
+        if (other.getType().equals("brontosaurus"))
+        {
+            factor = 1.3;
+        } else if (other.getType().equals("stegosaurus"))
+        {
+            factor = 1.1;
+        } 
+        return factor;
+    }
+    
+    public double calcFactor (TRex other)
+    {
+        return 0.99999999998;
     }
 }
