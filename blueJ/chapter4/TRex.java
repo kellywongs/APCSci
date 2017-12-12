@@ -10,6 +10,7 @@ public class TRex extends Dinosaur
     public TRex() {
         this.setWeight(this.getWeight()+50);
         this.setType("t rex");
+        
     }
     
     public boolean attack (Dinosaur other)
@@ -69,10 +70,5 @@ public class TRex extends Dinosaur
             factor = 1.1;
         } 
         return factor;
-    }
-    
-    public double calcFactor (TRex other)
-    {
-        return 0.99999999998;
     }
 }

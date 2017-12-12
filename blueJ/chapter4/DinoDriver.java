@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class DinoDriver here.
  *
@@ -9,11 +9,28 @@ public class DinoDriver
 {
     public static void main(String[] args)
     {
-        TRex raagh = new TRex();
-        TRex attack = new TRex();
+        Dinosaur rex = new TRex();
+        rex = DinoDriver.randomAge(rex);
+        System.out.println(rex.dinosaurString());
+    }
+    
+    public static Dinosaur randomAge(Dinosaur ager)
+    {
+        // Random rand = new Random();
+        // int randAge = rand.nextInt(34);
+        int randAge = (int)(Math.random()*34);
         
-        System.out.println(raagh.dinosaurString());
-        System.out.println(attack.dinosaurString());
-        System.out.println(raagh.attack(attack));
+        // while (randAge != 0)
+        // {
+            // ager.ageUp();
+            // randAge-=1;
+        // }
+        
+        for (int index = 0; index<randAge; index++)
+        {
+            ager.ageUp();
+        }
+        return ager;
+        
     }
 }

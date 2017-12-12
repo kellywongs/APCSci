@@ -7,6 +7,4 @@ comment2.params=other
 comment2.target=boolean\ attack(Dinosaur)
 comment3.params=other
 comment3.target=double\ calcFactor(Dinosaur)
-comment4.params=other
-comment4.target=double\ calcFactor(TRex)
-numComments=5
+numComments=4

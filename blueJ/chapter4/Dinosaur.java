@@ -60,7 +60,7 @@ public abstract class Dinosaur
     
     public void ageUp() 
     {
-        if (this.health > 0 && age > 10)
+        if (this.health > 0)
         {
             age ++;
             
@@ -70,8 +70,16 @@ public abstract class Dinosaur
             } else if (this.age >= 10 && this.age < 25)
             {
                 health = health;
+            } else if (this.age >= 26 && this.age < 30)
+            {
+                health -= 5;
+            } else if (this.age > 30)
+            {
+                health -=10; 
+            }
         } 
     }
+    
     
     public String dinosaurString()
     {   
@@ -85,4 +93,17 @@ public abstract class Dinosaur
     
     public abstract boolean attack(Dinosaur other);
     public abstract double calcFactor(Dinosaur other);
+    
+    public boolean isAlive(Dinosaur other)
+    {
+        boolean is = true;
+        
+        if (other.getHealth() != 0)
+        {
+            is = true;
+        } else {
+            is = false;
+        }
+        return is;
+    }
 }
