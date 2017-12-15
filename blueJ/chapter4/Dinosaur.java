@@ -11,6 +11,8 @@ public abstract class Dinosaur
     private int weight;
     private int age;
     private int health;
+    private int wins;
+    private int battles;
     private String gender;
     private String type;
     private String eating;
@@ -20,6 +22,8 @@ public abstract class Dinosaur
         weight = (int)(Math.random()*1000)/10;
         age = 0; // baby dino
         health = 75; //baby dinosaurs are easy to kill
+        wins = 0;
+        battles = 0;
         if (Math.random() > 0.5) { gender = "male"; }
                             else { gender = "female"; }
         type = "dinosaur";
@@ -86,6 +90,9 @@ public abstract class Dinosaur
         return ("\nweight: " + weight + 
                 "\nage: " + age +
                 "\nhealth: " + health +
+                "\nwins: " + wins +
+                "\nlosses: " + (battles-wins) +
+                "\nbattles: " + battles +
                 "\ngender: " + gender + 
                 "\ntype: " + type +
                 "\neating: " + eating);
@@ -93,6 +100,14 @@ public abstract class Dinosaur
     
     public abstract boolean attack(Dinosaur other);
     public abstract double calcFactor(Dinosaur other);
+    
+    public void update(Dinosaur winner, Dinosaur loser)
+    {
+        winner.wins += 1;
+        winner.battles += 1;
+        
+        loser.battles += 1;
+    }
     
     public boolean isAlive(Dinosaur other)
     {

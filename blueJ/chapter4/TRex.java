@@ -30,6 +30,7 @@ public class TRex extends Dinosaur
             other.setHealth(other.getHealth() - (attackerStat/8));
             
             System.out.println("underdog attacker won!");
+            update(this, other);
             won = true;
         } else if (underdogChance < 0.1 && (otherStat < attackerStat))
         {
@@ -37,6 +38,7 @@ public class TRex extends Dinosaur
             other.setHealth(other.getHealth() - (attackerStat/40));
             
             System.out.println("underdog attackee won!"); 
+            update(other, this);
             won = false;
         } else if (attackerStat < otherStat)
         {
@@ -44,6 +46,7 @@ public class TRex extends Dinosaur
             other.setHealth(other.getHealth() - (attackerStat/50));
             
             System.out.println("attackee won!");
+            update(other, this);
             won = false;
         } else if (attackerStat > otherStat)
         {
@@ -51,6 +54,7 @@ public class TRex extends Dinosaur
             other.setHealth(other.getHealth() - (attackerStat/4));
             
             System.out.println("attacker won!");
+            update(this, other);
             won = true;
         } 
         System.out.println("\nattacker health: " + this.getHealth() +

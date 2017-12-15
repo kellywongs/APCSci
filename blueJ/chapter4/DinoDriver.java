@@ -9,9 +9,14 @@ public class DinoDriver
 {
     public static void main(String[] args)
     {
-        Dinosaur rex = new TRex();
-        rex = DinoDriver.randomAge(rex);
-        System.out.println(rex.dinosaurString());
+        // Dinosaur rex = new TRex();
+        // rex = DinoDriver.randomAge(rex);
+        // System.out.println(rex.dinosaurString());
+        
+        Dinosaur one = new TRex();
+        Dinosaur two = new TRex();
+        System.out.println(one.attack(two));
+        System.out.println(one.dinosaurString() + "\n" + two.dinosaurString());
     }
     
     public static Dinosaur randomAge(Dinosaur ager)
