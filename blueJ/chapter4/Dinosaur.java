@@ -53,6 +53,12 @@ public abstract class Dinosaur
     public int getHealth()  { return this.health; }
     public void setHealth(int newValue) { health = newValue; }
     
+    public int getWins()  { return this.wins; }
+    public void setWins(int newValue) { wins = newValue; }
+    
+    public int getBattles()  { return this.battles; }
+    public void setBattles(int newValue) { battles = newValue; }
+    
     public String getGender()  { return this.gender; }
     public void setGender(String newValue) { gender = newValue; }
     
