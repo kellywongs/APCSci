@@ -1,4 +1,10 @@
 #BlueJ class context
 comment0.target=RandomName
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ RandomName\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-numComments=1
+comment1.params=
+comment1.target=java.lang.String\ makeRandomName()
+comment2.params=
+comment2.target=java.lang.String\ randomConsonant()
+comment3.params=
+comment3.target=java.lang.String\ randomVowel()
+numComments=4

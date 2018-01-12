@@ -7,8 +7,11 @@
  */
 public class RandomNameDriver
 {
-    public void main()
+    public static void main()
     {
         RandomName randomizer = new RandomName();
+        while (1==1){
+        System.out.println(randomizer.makeRandomName());
+    }
     }
 }

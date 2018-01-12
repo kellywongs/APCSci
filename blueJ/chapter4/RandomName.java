@@ -7,5 +7,37 @@
  */
 public class RandomName
 {
+    public String makeRandomName()
+    {
+        String name = "";
+        
+        name += randomConsonant().toUpperCase();
+        name += randomVowel();
+        name += randomConsonant();
+        if (Math.random()>0.5){
+            name += randomConsonant();
+        } else {
+             name +=randomVowel();
+        }
+        if (Math.random()>0.5){
+            name += randomConsonant();
+        } else {
+             name +=randomVowel();
+        }
+        
+        return name;
+    }
     
+    private String randomConsonant()
+    {
+        String[] consonantList = {"b", "c", "d", "f", "g", "h", "j", "k", "l", 
+            "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"};
+        return(consonantList[(int)(Math.random() * consonantList.length)]);
+    }
+    
+    private String randomVowel()
+    {
+        String[] vowelList = {"a", "e", "i", "o", "u", "y"};
+        return(vowelList[(int)(Math.random() * vowelList.length)]);
+    }
 }
