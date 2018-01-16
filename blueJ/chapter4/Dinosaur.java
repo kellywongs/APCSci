@@ -8,6 +8,8 @@
 public abstract class Dinosaur
 {
     // instance variables
+    private String name;
+    private RandomName randomizerName = new RandomName();
     private int weight;
     private int age;
     private int health;
@@ -19,6 +21,7 @@ public abstract class Dinosaur
     
     public Dinosaur()
     {
+        name = randomizerName.makeRandomName();
         weight = (int)(Math.random()*1000)/10;
         age = 0; // baby dino
         health = 75; //baby dinosaurs are easy to kill
@@ -93,18 +96,67 @@ public abstract class Dinosaur
     
     public String dinosaurString()
     {   
-        return ("\nweight: " + weight + 
-                "\nage: " + age +
-                "\nhealth: " + health +
+        return ("\nname: " + name +
+                "\nweight: " + weight + 
+                "\tage: " + age +
+                "\t        health: " + health +
                 "\nwins: " + wins +
-                "\nlosses: " + (battles-wins) +
-                "\nbattles: " + battles +
+                "\t        losses: " + (battles-wins) +
+                "\tbattles: " + battles +
                 "\ngender: " + gender + 
-                "\ntype: " + type +
-                "\neating: " + eating);
+                "\ttype: " + type +
+                "\teating: " + eating);
     }
     
-    public abstract boolean attack(Dinosaur other);
+    public boolean attack (Dinosaur other)
+    { 
+        int attackerStat = (int)((( this.getWeight() / 2 ) + this.getHealth() + 100) * this.calcFactor(other));
+        int otherStat = (int)((other.getWeight() / 2) + other.getHealth() + 100);
+        double underdogChance = Math.random(); 
+        boolean won = false;
+        
+        System.out.println("\nattacker: " + attackerStat +
+                           "\nattackee: " + otherStat);
+        System.out.println("underdogChance: " + underdogChance);
+                           
+        if (underdogChance < 0.1 && (attackerStat < otherStat))
+        {
+            this.setHealth(this.getHealth() - (otherStat/40));
+            other.setHealth(other.getHealth() - (attackerStat/8));
+            
+            System.out.println("underdog attacker won!");
+            update(this, other);
+            won = true;
+        } else if (underdogChance < 0.1 && (otherStat < attackerStat))
+        {
+            this.setHealth(this.getHealth() - (otherStat/8));
+            other.setHealth(other.getHealth() - (attackerStat/40));
+            
+            System.out.println("underdog attackee won!"); 
+            update(other, this);
+            won = false;
+        } else if (attackerStat < otherStat)
+        {
+            this.setHealth(this.getHealth() - (otherStat/4));
+            other.setHealth(other.getHealth() - (attackerStat/50));
+            
+            System.out.println("attackee won!");
+            update(other, this);
+            won = false;
+        } else if (attackerStat > otherStat)
+        {
+            this.setHealth(this.getHealth() - (otherStat/50));
+            other.setHealth(other.getHealth() - (attackerStat/4));
+            
+            System.out.println("attacker won!");
+            update(this, other);
+            won = true;
+        } 
+        System.out.println("\nattacker health: " + this.getHealth() +
+                           "\nattackee health: " + other.getHealth());
+        return won;
+    }
+    
     public abstract double calcFactor(Dinosaur other);
     
     public void update(Dinosaur winner, Dinosaur loser)

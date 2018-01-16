@@ -19,9 +19,9 @@ public class RandomName
         } else {
              name +=randomVowel();
         }
-        if (Math.random()>0.5){
+        if (Math.random()>0.3){
             name += randomConsonant();
-        } else {
+        } else if (Math.random() > 0.6) {
              name +=randomVowel();
         }
         

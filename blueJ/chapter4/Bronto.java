@@ -1,15 +1,15 @@
 
 /**
- * Write a description of class TRex here.
+ * Write a description of class Bronto here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class TRex extends Dinosaur
+public class Bronto extends Dinosaur
 {
-    public TRex() {
-        this.setWeight(this.getWeight()+50);
-        this.setType("t rex");
+    public Bronto() {
+        this.setWeight(this.getWeight()+100);
+        this.setType("brontosaurus");
         
     }
     
@@ -18,12 +18,12 @@ public class TRex extends Dinosaur
     {
         double factor = 1;
         
-        if (other.getType().equals("brontosaurus"))
+        if (other.getType().equals("t rex"))
         {
-            factor = 1.3;
+            factor = 0.8;
         } else if (other.getType().equals("stegosaurus"))
         {
-            factor = 1.1;
+            factor = 0.9999;
         } 
         return factor;
     }

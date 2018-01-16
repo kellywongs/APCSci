@@ -12,6 +12,6 @@ public class RandomNameDriver
         RandomName randomizer = new RandomName();
         while (1==1){
         System.out.println(randomizer.makeRandomName());
-    }
+        }
     }
 }

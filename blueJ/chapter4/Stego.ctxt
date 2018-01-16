@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Stego
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Stego\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Stego()
+comment2.params=other
+comment2.target=double\ calcFactor(Dinosaur)
+numComments=3
