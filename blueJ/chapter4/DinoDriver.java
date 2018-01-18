@@ -21,7 +21,7 @@ public class DinoDriver
         Dinosaur[] population = new Dinosaur[50];
         int counter = 0;
         
-        for (int index = 1; index<population.length; index+=3)
+        for (int index = 0; index<population.length; index+=3)
         {
             counter++;
             if (counter == 1) {
@@ -32,7 +32,14 @@ public class DinoDriver
                 population[index] = new Stego();
                 counter = 0;
             }
-            population[index].dinosaurString();
+            System.out.println(population[index].dinosaurString());
+        }
+        
+        for (int index = 0; index<population.length; index ++)
+        {
+            int next = 1;
+            
+            
         }
     }
     
