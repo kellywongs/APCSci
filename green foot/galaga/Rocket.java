@@ -17,7 +17,7 @@ public class Rocket extends Actor
         this.setRotation(270);
         direction = 180;
         
-        shootSpeed = 5;
+        shootSpeed = 7;
         shootCounter = 0;
     }
     

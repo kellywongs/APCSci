@@ -11,10 +11,37 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+    Picture pic = new Picture("beach.jpg");
+    pic.explore();
+    pic.zeroBlue();
+    pic.explore();
+  }
+  
+  public static void testZeroRed()
+  {
+      Picture pic = new Picture("wall.jpg");
+      
+      pic.explore();
+      pic.zeroRed();
+      pic.explore();
+  }
+  
+  public static void testNegate()
+  {
+      Picture pic = new Picture("jenny-red.jpg");
+     
+      pic.explore();
+      pic.negate();
+      pic.explore();
+  }
+  
+  public static void testGrayscale()
+  {
+      Picture pic = new Picture("jenny-red.jpg");
+     
+      pic.explore();
+      pic.grayscale();
+      pic.explore();
   }
   
   /** Method to test mirrorVertical */
@@ -58,27 +85,28 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
-    //testFixUnderwater();
-    //testMirrorVertical();
-    //testMirrorTemple();
-    //testMirrorArms();
-    //testMirrorGull();
-    //testMirrorDiagonal();
-    //testCollage();
-    //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
-    //testChromakey();
-    //testEncodeAndDecode();
-    //testGetCountRedOverValue(250);
-    //testSetRedToHalfValueInTopHalf();
-    //testClearBlueOverValue(200);
-    //testGetAverageForColumn(0);
-  }
+    // testZeroBlue();
+    // testZeroRed();
+    // testKeepOnlyBlue();
+    // testKeepOnlyRed();
+    // testKeepOnlyGreen();
+    // testNegate();
+    testGrayscale();
+    // testFixUnderwater();
+    // testMirrorVertical();
+    // testMirrorTemple();
+    // testMirrorArms();
+    // testMirrorGull();
+    // testMirrorDiagonal();
+    // testCollage();
+    // testCopy();
+    // testEdgeDetection();
+    // testEdgeDetection2();
+    // testChromakey();
+    // testEncodeAndDecode();
+    // testGetCountRedOverValue(250);
+    // testSetRedToHalfValueInTopHalf();
+    // testClearBlueOverValue(200);
+    // testGetAverageForColumn(0);
+   }
 }
