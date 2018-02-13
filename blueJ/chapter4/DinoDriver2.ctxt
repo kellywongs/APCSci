@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=DinoDriver2
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DinoDriver2\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=list
+comment2.target=Dinosaur\ battleTime(java.util.ArrayList)
+comment3.params=population
+comment3.target=Dinosaur\ fightEveryone(java.util.ArrayList)
+comment4.params=ager
+comment4.target=void\ randomAge(Dinosaur)
+comment5.params=population
+comment5.target=void\ ageAll(java.util.ArrayList)
+comment6.params=population\ years
+comment6.target=void\ ageAll(java.util.ArrayList,\ int)
+numComments=7

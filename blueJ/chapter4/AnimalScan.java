@@ -8,10 +8,10 @@ import java.util.Scanner;
  */
 public class AnimalScan extends Tester1
 {
-   public void animalScan()
-   {
-       Scanner aScanner = new Scanner(System.in);
-        System.out.println("Enter an animal: ");
-        aScanner = Scanner.nextLine();
-   }
+   // public void animalScan()
+   // {
+       // Scanner aScanner = new Scanner(System.in);
+        // System.out.println("Enter an animal: ");
+        // aScanner = Scanner.nextLine();
+   // }
 }

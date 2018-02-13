@@ -13,7 +13,12 @@ public class RandomName
         
         name += randomConsonant().toUpperCase();
         name += randomVowel();
-        name += randomConsonant();
+        if (Math.random()>0.5){
+            name += randomConsonant();
+        } else {
+             name +=randomVowel();
+             name += randomConsonant();
+        }
         if (Math.random()>0.5){
             name += randomConsonant();
         } else {

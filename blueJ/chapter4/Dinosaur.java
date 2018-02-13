@@ -47,6 +47,9 @@ public abstract class Dinosaur
     // ****************************************************************
     // getters n setters
     
+    public String getName()  { return this.name; }
+    public void setName(String newValue) { name = newValue; }
+    
     public int getWeight()  { return this.weight; }
     public void setWeight(int newValue) { weight = newValue; }
     
@@ -108,6 +111,20 @@ public abstract class Dinosaur
                 "\teating: " + eating);
     }
     
+    public String toString()
+    {   
+        return ("\nname: " + name +
+                "\nweight: " + weight + 
+                "\tage: " + age +
+                "\t        health: " + health +
+                "\nwins: " + wins +
+                "\t        losses: " + (battles-wins) +
+                "\tbattles: " + battles +
+                "\ngender: " + gender + 
+                "\ttype: " + type +
+                "\teating: " + eating);
+    }
+    
     public boolean attack (Dinosaur other)
     { 
         int attackerStat = (int)((( this.getWeight() / 2 ) + this.getHealth() + 100) * this.calcFactor(other));
@@ -115,16 +132,17 @@ public abstract class Dinosaur
         double underdogChance = Math.random(); 
         boolean won = false;
         
-        System.out.println("\nattacker: " + attackerStat +
-                           "\nattackee: " + otherStat);
-        System.out.println("underdogChance: " + underdogChance);
+        System.out.println("\nattacker: " + this.getName() + ", " + 
+                            this.getType() + ", " + attackerStat +
+                           "\nattackee: " + other.getName() + ", " + 
+                            other.getType() + ", " + otherStat);
                            
         if (underdogChance < 0.1 && (attackerStat < otherStat))
         {
             this.setHealth(this.getHealth() - (otherStat/40));
             other.setHealth(other.getHealth() - (attackerStat/8));
             
-            System.out.println("underdog attacker won!");
+            System.out.println("underdog " + this.getName() + " won!");
             update(this, other);
             won = true;
         } else if (underdogChance < 0.1 && (otherStat < attackerStat))
@@ -132,7 +150,7 @@ public abstract class Dinosaur
             this.setHealth(this.getHealth() - (otherStat/8));
             other.setHealth(other.getHealth() - (attackerStat/40));
             
-            System.out.println("underdog attackee won!"); 
+            System.out.println("underdog " + other.getName() + " won!"); 
             update(other, this);
             won = false;
         } else if (attackerStat < otherStat)
@@ -140,7 +158,7 @@ public abstract class Dinosaur
             this.setHealth(this.getHealth() - (otherStat/4));
             other.setHealth(other.getHealth() - (attackerStat/50));
             
-            System.out.println("attackee won!");
+            System.out.println("attackee " + other.getName() + " won!");
             update(other, this);
             won = false;
         } else if (attackerStat > otherStat)
@@ -148,12 +166,12 @@ public abstract class Dinosaur
             this.setHealth(this.getHealth() - (otherStat/50));
             other.setHealth(other.getHealth() - (attackerStat/4));
             
-            System.out.println("attacker won!");
+            System.out.println("attacker " + this.getName() + " won!");
             update(this, other);
             won = true;
         } 
-        System.out.println("\nattacker health: " + this.getHealth() +
-                           "\nattackee health: " + other.getHealth());
+        System.out.println("\n" + this.getName() + " health: " + this.getHealth() +
+                           "\n" + other.getName() + " health: " + other.getHealth());
         return won;
     }
     
