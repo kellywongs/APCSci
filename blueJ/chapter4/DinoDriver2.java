@@ -12,6 +12,7 @@ public class DinoDriver2
     {
         ArrayList<Dinosaur> dinosaurList = new ArrayList<Dinosaur>(); 
         
+
         for (int i = 0; i < 30; i++)
         {
             double randomNumber = Math.random();
@@ -28,78 +29,114 @@ public class DinoDriver2
                 randomAge(dinosaurList.get(i));
             }
         }
-        
-        for (Dinosaur dinosaurs : dinosaurList)
-        {
-            System.out.println(dinosaurs.dinosaurString());
-            // dinosaurs.toString();
-        }
-        
-        battleTime(dinosaurList);
-        
-        }
-        
+
+        // for (Dinosaur dinosaurs : dinosaurList)
+        // {
+            // System.out.println(dinosaurs.dinosaurString());
+            // // dinosaurs.toString();
+        // }
+
+        fightEveryone(dinosaurList, 12);
+
+    }
+
     public static Dinosaur battleTime(ArrayList<Dinosaur> list)
     {
         Dinosaur winner = null;
+        Dinosaur fighter = null;
+        Dinosaur defender = null;
         
+        
+        ArrayList<Dinosaur> deadDinos = new ArrayList<Dinosaur>();
         for (int fight = 0; fight < list.size(); fight++)
         {
+            fighter = list.get(fight);
             if (list.size() != 1) {
-            while (list.get(fight).getHealth() > 0)
-            {
-                int defender = (int)(Math.random() * list.size());
-                
-                if (list.get(defender).equals(list.get(fight)) == false)
+                while (fighter.getHealth() > 0)
                 {
-                    if (list.get(defender).isAlive(list.get(defender)))
+                    defender = list.get((int)(Math.random() * list.size()));
+
+                    if (defender.equals(fighter) == false)
                     {
-                        list.get(fight).attack(list.get(defender));
-                        
-                        if (list.get(defender).getHealth() <= 0)
+                        if (defender.isAlive(defender))
                         {
-                            list.remove(defender);
-                        }
-                    } else { defender = (int)(Math.random() * 30); }
-                    
-                    
-                } else { defender = (int)(Math.random() * 30); }
+                            list.get(fight).attack(defender);
+
+                            if (defender.getHealth() <= 0)
+                            {
+                                deadDinos.add(defender);
+                                list.remove(defender);
+                            }
+                        } else { defender = list.get((int)(Math.random() * list.size())); }
+
+                    } else { defender = list.get((int)(Math.random() * list.size())); }
+                }
+                if (list.get(fight).getHealth() <= 0)
+                {
+                    list.remove(fight);
+                }
+            }
+
+        }
+
+        return winner;
+    }
+
+    public static void fightEveryone(ArrayList<Dinosaur> population, int years)
+    {
+        Dinosaur winner = population.get(0);
+        Dinosaur fighter = null;
+        for (int counter = 0; counter < years; counter++) {
+            if (counter % 10 == 0)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    double randomNumber = Math.random();
+                    if (randomNumber < (0.333)) { 
+                        population.add(new TRex());
+                        randomAge(population.get(i));
+                    }
+                    else if (randomNumber < (0.666)) { 
+                        population.add(new Bronto());
+                        randomAge(population.get(i));
+                    }
+                    else { 
+                        population.add(new Stego()); 
+                        randomAge(population.get(i));
+                    }
+                }
+            }
+            
+            for (int dinosaur = 0; dinosaur < population.size(); dinosaur+=1)
+            {
+                winner = population.get(dinosaur);
+                
+                do {
+                    fighter = population.get((int)(Math.random())*population.size());
+                } while (winner.equals(fighter) == false); 
+                
+                while (winner.getHealth() > 0) {
+                winner.attack(fighter);
+                
+                if (fighter.getHealth() == 0) { population.remove(fighter); }
+            }
+                population.remove(winner);  
                 
             }
-            
-            if (list.get(fight).getHealth() <= 0)
-            {
-                list.remove(fight);
-            }
         }
-            
-        }
-        
-        return winner;
+
     }
-    
-    public static Dinosaur fightEveryone(ArrayList<Dinosaur> population)
-    {
-        Dinosaur winner = null;
-        
-        for (int dinosaur = 0; dinosaur < population.size(); dinosaur+=1)
-        {
-            
-        }
-        
-        return winner;
-    }
-        
+
     public static void randomAge(Dinosaur ager)
     {
         int randAge = (int)(Math.random()*34);
-        
+
         for (int index = 0; index<randAge; index++)
         {
             ager.ageUp();
         }
     }
-    
+
     public static void ageAll(ArrayList<Dinosaur> population) 
     {
         for (Dinosaur dino : population)
@@ -111,7 +148,7 @@ public class DinoDriver2
             }
         }
     }
-    
+
     public static void ageAll(ArrayList<Dinosaur> population, int years)
     {
         for (Dinosaur dino : population)
@@ -126,5 +163,5 @@ public class DinoDriver2
             }
         }
     }
-    
+
 }
