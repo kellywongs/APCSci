@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public abstract class Dinosaur
+public abstract class Dinosaur implements Comparable
 {
     // instance variables
     private String name;
@@ -196,5 +196,10 @@ public abstract class Dinosaur
             is = false;
         }
         return is;
+    }
+    
+    public int compareTo(Object obj)
+    {
+        Dinosaur other = (Dinosaur)obj
     }
 }

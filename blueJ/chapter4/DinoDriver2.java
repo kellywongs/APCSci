@@ -8,6 +8,8 @@ import java.util.*;
  */
 public class DinoDriver2
 {
+    
+    
     public static void main(String[] args)
     {
         ArrayList<Dinosaur> dinosaurList = new ArrayList<Dinosaur>(); 
@@ -46,7 +48,6 @@ public class DinoDriver2
         Dinosaur fighter = null;
         Dinosaur defender = null;
         
-        
         ArrayList<Dinosaur> deadDinos = new ArrayList<Dinosaur>();
         for (int fight = 0; fight < list.size(); fight++)
         {
@@ -71,9 +72,9 @@ public class DinoDriver2
 
                     } else { defender = list.get((int)(Math.random() * list.size())); }
                 }
-                if (list.get(fight).getHealth() <= 0)
+                if (fighter.getHealth() <= 0)
                 {
-                    list.remove(fight);
+                    deadDinos.add(fighter);
                 }
             }
 
