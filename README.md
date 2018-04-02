@@ -16,10 +16,10 @@
     + each question is worth 9 points with multiple sections
     
 ### Official Subset
-Highlighted text is in the subset
+**Bolded** text is in the subset
 normal text isn’t but u should probably know it anyways
 
-Commenting
+#### Commenting
 /*
  * This is a multi-line comment. The extra asterisk isn’t
  * technically necessary. 
